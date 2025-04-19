@@ -1,13 +1,8 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
-    console.log(`MongoDB connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
-  }
+    await mongoose.connect('mongodb+srv://usingmasai121:AiUIaAnMoXY6Qyxh@cluster0.fkm8r3l.mongodb.net/airo-ticket').then(() => console.log("DB connected"))
 };
+
 
 export default connectDB;
